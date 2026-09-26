@@ -112,9 +112,12 @@
 .card-slash { color: var(--primary); padding-inline: 7px; }
 .card-live { display: flex; align-items: center; gap: 7px; color: var(--muted-foreground); white-space: nowrap; }
 .card-live .signal-dot { width: 5px; height: 5px; }
-.preview-wrap { position: relative; height: 360px; overflow: hidden; background: var(--background); }
-.creation-wide .preview-wrap { height: 520px; }
-.preview-wrap iframe { display: block; width: 100%; height: 100%; border: 0; background: var(--background); }
+.preview-wrap { display: flex; align-items: center; justify-content: center; padding: 32px 20px; min-width: 0; background: var(--background); }
+.phone-frame { position: relative; width: min(100%, 330px); flex: none; padding: 17px 9px 11px; background: linear-gradient(135deg, var(--muted-foreground), var(--border) 12%, var(--secondary) 36%, var(--border) 75%, var(--muted-foreground)); border: 1px solid var(--muted-foreground); clip-path: polygon(17px 0, calc(100% - 17px) 0, 100% 17px, 100% calc(100% - 17px), calc(100% - 17px) 100%, 17px 100%, 0 calc(100% - 17px), 0 17px); box-shadow: inset 0 0 0 3px var(--background); }
+.creation-wide .phone-frame { width: min(100%, 380px); }
+.phone-speaker { position: absolute; z-index: 1; top: 7px; left: 50%; width: 34px; height: 3px; transform: translateX(-50%); border-radius: 3px; background: var(--background); }
+.phone-screen { position: relative; width: 100%; aspect-ratio: 9 / 16; overflow: hidden; border: 1px solid var(--background); border-radius: 10px; background: var(--background); }
+.phone-screen iframe { display: block; width: 100%; height: 100%; border: 0; background: var(--background); }
 .preview-fallback { position: absolute; inset: 0; background: var(--background); display: flex; flex-direction: column; gap: 16px; justify-content: center; align-items: center; color: var(--muted-foreground); text-align: center; }
 .preview-fallback a { font: 600 11px var(--font-mono); color: var(--primary); display: inline-flex; gap: 8px; align-items: center; }
 .card-bottom { min-height: 88px; padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
@@ -192,7 +195,8 @@
   .section-heading-row p { font-size: 15px; margin-top: 10px; }
   .creation-grid { grid-template-columns: 1fr; gap: 18px; }
   .creation-wide { grid-column: auto; }
-  .preview-wrap, .creation-wide .preview-wrap { height: 390px; }
+  .preview-wrap { padding: 24px 16px; }
+  .phone-frame, .creation-wide .phone-frame { width: min(100%, 330px); }
   .card-bottom { padding: 12px; }
   .card-controls { gap: 0; }
   .card-title strong { font-size: 18px; }
