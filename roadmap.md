@@ -1,3 +1,3 @@
 - [x] Inspect supplied brief and current project; identify official bot URL from live site.
 - [x] Build cinematic wall with query-driven iframe gallery, management controls, and bot calls to action.
-- [ ] Verify query handling and appearance at desktop and mobile sizes.
+- [ ] Verify the supplied four-page URL, single URL, empty and invalid states at desktop and mobile sizes.
