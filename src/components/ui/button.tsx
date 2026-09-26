@@ -16,12 +16,18 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        wallNav: "h-9 rounded-none border border-primary bg-transparent px-4 font-mono text-[10px] font-semibold text-primary hover:bg-primary hover:text-primary-foreground",
+        wallPrimary: "rounded-none bg-primary px-6 font-mono text-[11px] font-semibold text-primary-foreground shadow-[0_0_24px_color-mix(in_oklch,var(--primary)_24%,transparent)] hover:bg-primary/90 hover:shadow-[0_0_34px_color-mix(in_oklch,var(--primary)_44%,transparent)] [&_svg]:transition-transform hover:[&_svg]:translate-x-0.5",
+        wallOutline: "rounded-none border border-border bg-transparent px-6 font-mono text-[11px] font-semibold text-foreground hover:border-primary hover:text-primary",
+        wallTool: "rounded-none bg-transparent px-3 font-mono text-[10px] font-semibold text-muted-foreground hover:bg-secondary hover:text-foreground",
+        wallIcon: "rounded-none bg-transparent text-muted-foreground hover:bg-secondary hover:text-primary",
       },
       size: {
         default: "h-9 px-4 py-2",
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-10 rounded-md px-8",
         icon: "h-9 w-9",
+        wallLarge: "min-h-13 px-7 py-3",
       },
     },
     defaultVariants: {

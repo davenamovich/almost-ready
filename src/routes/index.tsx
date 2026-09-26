@@ -1,24 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { WallExperience } from "@/components/wall-experience";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({ meta: [
+    { title: "Plunder & Riffle — The Wall of Infinite Possibilities" },
+    { name: "description", content: "The internet is your canvas. Explore live creations and make something of your own with Plunder & Riffle." },
+    { property: "og:title", content: "Plunder & Riffle — The Wall of Infinite Possibilities" },
+    { property: "og:description", content: "One thought. Infinite ways to make it spread. Explore the wall and create your own." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary_large_image" },
+  ] }),
+  component: WallExperience,
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
