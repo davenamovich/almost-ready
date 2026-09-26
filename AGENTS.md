@@ -12,3 +12,4 @@
 - Keep the wall experience in a shared client component rendered by both `/` and `/wall`; this makes the requested first screen and the canonical wall path behave identically.
 - Keep creation URLs in the `u` query parameter and decode each URL individually; this preserves shared wall links without a backend.
 - Use the official Telegram link observed on the existing live site (`https://t.me/apiringbot`) for wall calls to action; this avoids inventing a bot destination.
+- Render each live creation inside a beveled 9:16 phone screen; this keeps embedded mobile pages at their intended proportions on both wall paths.
