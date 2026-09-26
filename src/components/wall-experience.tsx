@@ -91,7 +91,9 @@ export function WallExperience() {
     const urls = parseUrls(input);
     if (!urls.length) { setError("Enter at least one valid http or https URL."); return; }
     if (editingId) {
-      setItems(current => current.map(item => item.id === editingId ? { ...item, url: urls[0], status: "loading" } : item));
+      const firstUrl = urls[0];
+      if (!firstUrl) return;
+      setItems(current => current.map(item => item.id === editingId ? { ...item, url: firstUrl, status: "loading" } : item));
     } else {
       setItems(current => [...current, ...urls.slice(0, MAX_ITEMS - current.length).map((url, i) => makeCreation(url, current.length + i))]);
     }
